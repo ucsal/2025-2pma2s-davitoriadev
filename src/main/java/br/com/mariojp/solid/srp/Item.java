@@ -2,23 +2,26 @@ package br.com.mariojp.solid.srp;
 
 public class Item {
 	
-	private String name;
-	private double unitPrice; 
-	private int quantity;
+	private final String name;
+	private final double price; 
+	private final int quantity;
 	
-	public Item(String name, double unitPrice, int quantity) {
-		super();
+	public Item(String name, double price, int quantity) {
 		this.name = name;
-		this.unitPrice = unitPrice;
+		this.price = price;
 		this.quantity = quantity;
+	}
+
+	public double getTotal() {
+		return price * quantity;
 	}
 
 	public String getName() {
 		return name;
 	}
 
-	public double getUnitPrice() {
-		return unitPrice;
+	public double getPrice() {
+		return price;
 	}
 
 	public int getQuantity() {
